@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
-    public function index(User $user)
+    public function index(string $id)
     {
-        // $user = User::find($user);
+        $user = User::findOrFail($id);
         return view('profile.index',compact('user'));
     }
 }
