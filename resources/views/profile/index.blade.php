@@ -14,20 +14,20 @@
                     {{-- <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button> --}}
                 </div>
 
-                {{-- @can('update', $user->profile)
+                @can('update', $user->profile)
                     <a href="/p/create">Add New Post</a>
-                @endcan --}}
+                @endcan
 
             </div>
 
-            {{-- @can('update', $user->profile)
+            @can('update', $user->profile)
                 <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
-            @endcan --}}
+            @endcan
 
             <div class="d-flex">
-                {{-- <div class="pr-5"><strong>{{ $postCount }}</strong> posts</div>
-                <div class="pr-5"><strong>{{ $followersCount }}</strong> followers</div>
-                <div class="pr-5"><strong>{{ $followingCount }}</strong> following</div> --}}
+                <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
+                {{-- <div class="pr-5"><strong>{{ $followersCount }}</strong> followers</div> --}}
+                {{-- <div class="pr-5"><strong>{{ $followingCount }}</strong> following</div> --}}
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description }}</div>
@@ -36,13 +36,13 @@
     </div>
 
     <div class="row pt-5">
-        {{-- @foreach($user->posts as $post)
+        @foreach($user->posts as $post)
             <div class="col-4 pb-4">
                 <a href="/p/{{ $post->id }}">
                     <img src="/storage/{{ $post->image }}" class="w-100">
                 </a>
             </div>
-        @endforeach --}}
+        @endforeach
     </div>
 </div>
 @endsection
